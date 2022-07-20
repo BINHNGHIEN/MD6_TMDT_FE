@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'md6-tmdt-fe';
+  checkLogIn: boolean=true;
+
+  signUp() {
+    this.checkLogIn=false;
+  }
 }
