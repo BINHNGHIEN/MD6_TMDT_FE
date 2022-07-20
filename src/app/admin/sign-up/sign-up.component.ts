@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../service/auth.service";
 import {Router} from "@angular/router";
 import {ResponseMessage} from "../../model/response-message";
@@ -21,8 +21,8 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.formSignUp = this.fb.group({
-      name: [''],
-      email: [''],
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       username: [''],
       password: [''],
       roles: this.fb.array(['user']),
@@ -40,5 +40,13 @@ export class SignUpComponent implements OnInit {
     }, error => {
       alert(error);
     });
+  }
+
+  get name() {
+    return this.formSignUp.get('name');
+  }
+
+  get email() {
+    return this.formSignUp.get('email');
   }
 }
