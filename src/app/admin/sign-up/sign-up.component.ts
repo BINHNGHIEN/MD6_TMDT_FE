@@ -13,6 +13,7 @@ export class SignUpComponent implements OnInit {
 
   status = 'Please fill in the form to register';
   formSignUp!: FormGroup;
+  formProduct!: FormGroup;
 
   constructor(private authService: AuthService,
               private router: Router,
@@ -21,10 +22,10 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.formSignUp = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', Validators.required,Validators.minLength(3)],
       email: ['', [Validators.required, Validators.email]],
-      username: [''],
-      password: [''],
+      username: ['',[Validators.required,Validators.minLength(4)]],
+      password: ['',[Validators.required,Validators.minLength(6)]],
       roles: this.fb.array(['user']),
     });
   }
@@ -45,8 +46,14 @@ export class SignUpComponent implements OnInit {
   get name() {
     return this.formSignUp.get('name');
   }
-
   get email() {
     return this.formSignUp.get('email');
   }
+  get username() {
+    return this.formSignUp.get('username');
+  }
+  get password() {
+    return this.formSignUp.get('password');
+  }
+
 }
