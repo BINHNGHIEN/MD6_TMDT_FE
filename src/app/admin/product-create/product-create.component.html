@@ -1,0 +1,13 @@
+<form [formGroup]="productForm" action="#" method="post" (submit)="saveForm()">
+  <input type="text" name="name" id="name" formControlName="name" placeholder="Nhập tên sản phẩm">
+  <input type="text" name="price" id="price" formControlName="price" placeholder="Nhập giá sản phẩm">
+  <div formGroupName="category">
+    <label>Thể loại (*)</label>
+    <select formControlName="id">
+      <option value="">-- Chọn thể loại --</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+    </select>
+  </div>
+  <button type="submit">Thêm mới</button>
+  <button type="reset">Xóa dữ liệu</button>
+</form>

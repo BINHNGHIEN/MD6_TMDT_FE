@@ -8,10 +8,11 @@ import {HomeComponent} from "./admin/home/home.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {LogInComponent} from "./admin/log-in/log-in.component";
+import {ProductCreateComponent} from './admin/product-create/product-create.component';
 
 @NgModule({
   declarations: [
-    AppComponent, SignUpComponent, HomeComponent, LogInComponent
+    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,10 @@
+import {Category} from "./category";
+
 export interface Product {
   id?: number;
-  nameProduct?: string;
-  avatarProduct?:string
-  priceProduct ?: number;
-  inventoryProduct?:number;
-  category?: any;
+  name?: string;
+  avatar?: string
+  price?: number;
+  inventory?: number;
+  category?: Category;
 }
