@@ -9,10 +9,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {LogInComponent} from "./admin/log-in/log-in.component";
 import {ProductCreateComponent} from './admin/product-create/product-create.component';
+import { NavbarComponent } from './blocks/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent
+    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,
