@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="mb-14">
+  <div class="row mb-11 align-items-center">
+    <div class="col-lg-12 mb-lg-0 mb-4">
+      <h3 style="text-align: center" class="font-size-4 mb-0">DANH SÁCH SẢN PHẨM</h3>
+    </div>
+  </div>
+  <div class="bg-white shadow-8 pt-7 rounded pb-8 px-11">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr style="collapse: 0">
+          <th scope="col" class="border-0 font-size-4 font-weight-normal"></th>
+          <th scope="col" class="border-0 font-size-4 font-weight-normal">Danh sách</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let r of category; index as i" class="border border-color-2">
+          <td class="table-y-middle py-7 min-width-px-50 pr-0">
+            <h3 class="font-size-4 font-weight-normal text-black-2 mb-0">{{i+1}}</h3>
+          </td>
+          <td scope="row" class="pl-6 border-0 py-7 pr-0"><a>
+            <h3 class="font-size-4 mb-0 font-weight-semibold text-black-2">{{r.name}}</h3>
+          </a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pt-2">
+    </div>
+  </div>
+</div>
