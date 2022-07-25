@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     if(this.tokenService.getTokenKey()){
       this.isLogin = true;
-      console.log('avatar   ====> ');
+      console.log('   ====> ');
     }
   }
   logOut(){

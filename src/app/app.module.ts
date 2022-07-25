@@ -8,12 +8,16 @@ import {HomeComponent} from "./admin/home/home.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {LogInComponent} from "./admin/log-in/log-in.component";
-import {ProductCreateComponent} from './admin/product-create/product-create.component';
+import {ProductCreateComponent} from './admin/product/product-create/product-create.component';
 import { NavbarComponent } from './blocks/navbar/navbar.component';
+import { CreateCategoryComponent } from './admin/category/create-category/create-category.component';
+import { ListCategoryComponent } from './admin/category/list-category/list-category.component';
+import { ProductListComponent } from './admin/product/product-list/product-list.component';
+import { FooterComponent } from './blocks/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent, NavbarComponent
+    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent, NavbarComponent, CreateCategoryComponent, ListCategoryComponent, ProductListComponent, FooterComponent
   ],
   imports: [
     BrowserModule,
