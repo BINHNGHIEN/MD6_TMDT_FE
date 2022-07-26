@@ -29,6 +29,10 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { MyPageComponent } from './admin/manage-profile/my-page/my-page.component';
+import {ChangeAvatarComponent} from "./admin/manage-profile/change-avatar/change-avatar.component";
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import {MatCardModule} from "@angular/material/card";
     ProductDetailComponent,
     ProductUpdateComponent,
     UploadAvatarComponent,
+    MyPageComponent,
+    ChangeAvatarComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,9 @@ import {MatCardModule} from "@angular/material/card";
     MatSlideToggleModule,
     MatButtonModule,
     MatNativeDateModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

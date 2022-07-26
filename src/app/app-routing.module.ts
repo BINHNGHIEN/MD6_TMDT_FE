@@ -8,6 +8,8 @@ import {ListCategoryComponent} from "./admin/category/list-category/list-categor
 import {ProductListComponent} from "./admin/product/product-list/product-list.component";
 import {CreateCategoryComponent} from "./admin/category/create-category/create-category.component";
 import {ProductDetailComponent} from "./admin/product/product-detail/product-detail.component";
+import {MyPageComponent} from "./admin/manage-profile/my-page/my-page.component";
+import {ChangeAvatarComponent} from "./admin/manage-profile/change-avatar/change-avatar.component";
 
 const routes: Routes = [
 
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'product-list', component: ProductListComponent},
   {path: 'list-category', component: ListCategoryComponent},
   {path: 'create-category', component: CreateCategoryComponent},
-  {path: 'detail/:id', component: ProductDetailComponent}
+  {path: 'detail/:id', component: ProductDetailComponent},
+  {path: 'my-page', component: MyPageComponent},
+  {path: 'change-avatar', component: ChangeAvatarComponent}
 
 ];
 
