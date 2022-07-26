@@ -14,12 +14,13 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activateRoute.paramMap.subscribe((paraMap: ParamMap) => {
-      const id = paraMap.get('id');
+      const id = +paraMap.get('id')!;
       this.productService.findById(id).subscribe((data) => {
         console.log('-------  Z--->',data)
         this.product = data;
       })
     });
   }
+
 
 }

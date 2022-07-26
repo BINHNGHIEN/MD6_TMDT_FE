@@ -14,10 +14,12 @@ import { CreateCategoryComponent } from './admin/category/create-category/create
 import { ListCategoryComponent } from './admin/category/list-category/list-category.component';
 import { ProductListComponent } from './admin/product/product-list/product-list.component';
 import { FooterComponent } from './blocks/footer/footer.component';
+import {ProductDetailComponent} from "./admin/product/product-detail/product-detail.component";
 
 @NgModule({
   declarations: [
-    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent, NavbarComponent, CreateCategoryComponent, ListCategoryComponent, ProductListComponent, FooterComponent
+    AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent, NavbarComponent, CreateCategoryComponent, ListCategoryComponent, ProductListComponent, FooterComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
