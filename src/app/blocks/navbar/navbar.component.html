@@ -17,6 +17,13 @@
             <button routerLink="signUp" class="dropdown-item" type="button" >Đăng ký</button>
           </div>
         </div>
+        <a *ngIf="isLogin" style="color: springgreen; text-decoration: none;"
+           aria-label="Angular Audio Player"
+           mat-button tabindex="0" aria-disabled="false" routerLink="change-avatar"><span class="mat-button-wrapper">
+          <img  style="border-radius: 50%" alt="angular" class="image-change" [src]=avatar width="40px" height="40px"></span>
+          <div class="mat-button-ripple mat-ripple" matripple=""></div>
+          <div class="mat-button-focus-overlay"></div>
+        </a><span class="example-spacer"></span>
 
         <div class="nav" *ngIf="isLogin" (click)="logOut()">
           <button>Đăng xuất</button>

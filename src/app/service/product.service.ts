@@ -35,5 +35,9 @@ export class ProductService {
   findById(id: number): Observable<any> {
     return this.http.get(environment.API_LOCAL + 'product/detail/' + id)
   }
+  deleteById(id: number): Observable<Product>{
+    return this.http.delete<Product>(environment.API_LOCAL + 'product/' +　id);
+  }
+
 
 }

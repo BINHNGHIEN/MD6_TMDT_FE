@@ -9,11 +9,14 @@ import {TokenService} from "../../service/token.service";
 export class NavbarComponent implements OnInit {
 
   isLogin = false;
+  // @ts-ignore
+  avatar: string;
 
   constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
     if(this.tokenService.getTokenKey()){
+      this.avatar = this.tokenService.getAvatarKey();
       this.isLogin = true;
       console.log('   ====> ');
     }

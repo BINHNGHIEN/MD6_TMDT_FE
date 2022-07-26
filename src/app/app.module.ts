@@ -15,18 +15,45 @@ import { ListCategoryComponent } from './admin/category/list-category/list-categ
 import { ProductListComponent } from './admin/product/product-list/product-list.component';
 import { FooterComponent } from './blocks/footer/footer.component';
 import {ProductDetailComponent} from "./admin/product/product-detail/product-detail.component";
+import { ProductUpdateComponent } from './admin/product/product-update/product-update.component';
+import {UploadAvatarComponent} from "./admin/upload/upload-avatar/upload-avatar.component";
+import {AngularFireStorageModule} from '@angular/fire/compat/storage';
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment.prod";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatInputModule} from "@angular/material/input";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
     AppComponent, SignUpComponent, HomeComponent, LogInComponent, ProductCreateComponent, NavbarComponent, CreateCategoryComponent, ListCategoryComponent, ProductListComponent, FooterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductUpdateComponent,
+    UploadAvatarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatToolbarModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatButtonModule,
+    MatNativeDateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
