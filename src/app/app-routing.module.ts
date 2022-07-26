@@ -23,7 +23,6 @@ const routes: Routes = [
   {path: 'detail/:id', component: ProductDetailComponent},
   {path: 'my-page', component: MyPageComponent},
   {path: 'change-avatar', component: ChangeAvatarComponent}
-
 ];
 
 @NgModule({
