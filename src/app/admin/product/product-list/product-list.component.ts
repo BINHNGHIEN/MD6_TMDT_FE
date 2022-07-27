@@ -60,6 +60,8 @@ export class ProductListComponent implements OnInit {
       this.productList();
     })
   }
-
-
+  addToCart(product_id: any){
+    this.productService.addToCart(product_id).subscribe((data) => {
+    })
+  }
 }
