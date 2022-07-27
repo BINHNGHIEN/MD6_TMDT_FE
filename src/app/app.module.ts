@@ -33,6 +33,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { MyPageComponent } from './admin/manage-profile/my-page/my-page.component';
 import {ChangeAvatarComponent} from "./admin/manage-profile/change-avatar/change-avatar.component";
+import {httpInterceptorProvider} from "./security/auth.interceptor";
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import {ChangeAvatarComponent} from "./admin/manage-profile/change-avatar/change
     MatProgressSpinnerModule,
     MatProgressBarModule
   ],
-  providers: [],
+  providers: [httpInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule {

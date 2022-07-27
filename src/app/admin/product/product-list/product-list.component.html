@@ -1,4 +1,17 @@
 <app-navbar></app-navbar>
+<div class="col-lg-4 col-6 text-left">
+  <form action="" [formGroup]="searchForm" (submit)="search()">
+    <div class="input-group">
+      <input formControlName="name" type="text" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
+      <div  class="input-group-append">
+        <button type="submit"><span type="submit" class="input-group-text bg-transparent text-primary">
+                                <i class="fa fa-search"></i>
+                            </span></button>
+
+      </div>
+    </div>
+  </form>
+</div>
 <div class="mb-14">
   <div class="row mb-11 align-items-center">
     <div class="col-lg-12 mb-lg-0 mb-4">
@@ -19,7 +32,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let r of product; index as i" class="border border-color-2">
+        <tr *ngFor="let r of list; index as i" class="border border-color-2">
           <td class="table-y-middle py-7 min-width-px-50 pr-0">
             <h3 class="font-size-4 font-weight-normal text-black-2 mb-0">{{i+1}}</h3>
           </td>

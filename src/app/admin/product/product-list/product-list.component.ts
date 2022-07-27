@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Product} from "../../../model/Product";
 import {ProductService} from "../../../service/product.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
+import {FormControl, FormGroup} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-product-list',
@@ -9,25 +11,37 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  searchForm = new FormGroup({
+      name : new FormControl('')
+    }
+
+  );
+  list: any ;
   deleteSuccess: any = {
     message: "yes"
   }
   checkDelete = false;
   status = '';
   product: Product[]=[];
-
-  constructor(private productService : ProductService) { }
+  constructor(private productService : ProductService,
+              private httpClient:HttpClient) { }
 
   ngOnInit(): void {
     this.productList();
   }
   productList(){
     this.productService.findAll().subscribe(data =>{
-      this.product=data;
+      this.list=data;
       console.log("======>",data)
     })
   }
-
+  search() {
+    this.productService.searchName(this.searchForm.value.name).subscribe((data)=> {
+      // @ts-ignore
+      this.list=data;
+      console.log(data)
+    })
+  }
 
   deleteProduct(id: any) {
     this.productService.deleteById(id).subscribe(data =>{

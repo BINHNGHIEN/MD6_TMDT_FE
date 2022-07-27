@@ -38,6 +38,7 @@ export class ProductService {
   deleteById(id: number): Observable<Product>{
     return this.http.delete<Product>(environment.API_LOCAL + 'product/' +　id);
   }
-
-
+  searchName(name:any): Observable<Product>{
+    return this.http.get(environment.API_LOCAL+`product/search?name=`+`${name}`)
+  }
 }

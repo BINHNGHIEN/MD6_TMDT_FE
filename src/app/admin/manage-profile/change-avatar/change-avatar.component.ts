@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from "../../../service/auth.service";
 import {TokenService} from "../../../service/token.service";
+import {ChangeAvatar} from "../../../model/ChangeAvatar";
 
 @Component({
   selector: 'app-change-avatar',
@@ -31,6 +32,7 @@ export class ChangeAvatarComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('vao chua')
     // @ts-ignore
     this.changeAvatar = new ChangeAvatar(
       this.form.avatar
@@ -38,11 +40,14 @@ export class ChangeAvatarComponent implements OnInit {
 
     // @ts-ignore
     this.authService.changeAvatar(this.changeAvatar).subscribe(data => {
+        console.log('change')
       if (JSON.stringify(data) == JSON.stringify(this.data1)) {
-        this.status = 'please upload Avatar!';
+        // this.status = 'please upload Avatar!';
+        console.log('please upload Avatar!')
       }
       if (JSON.stringify(data) == JSON.stringify(this.data2)) {
         this.status = 'Successful Avatar upload!';
+        console.log('Successful Avatar upload!')
         this.tokenStorageService.setAvatarKey(this.form.avatar);
         window.location.reload();
       }
@@ -50,7 +55,6 @@ export class ChangeAvatarComponent implements OnInit {
       // @ts-ignore
         error => {
       alert('change avatar failled!');
-
     });
   }
 

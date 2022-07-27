@@ -53,13 +53,14 @@
       </a>
     </div>
     <div class="col-lg-4 col-6 text-left">
-      <form action="">
+      <form action="" [formGroup]="searchForm" (submit)="search()">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm">
-          <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
+          <input formControlName="name" type="text" class="form-control" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
+          <div  class="input-group-append">
+            <button type="submit"><span type="submit" class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
-                            </span>
+                            </span></button>
+
           </div>
         </div>
       </form>

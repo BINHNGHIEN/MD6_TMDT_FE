@@ -11,7 +11,7 @@ import {ResponseMessage} from "../model/response-message";
   providedIn: 'root'
 })
 export class AuthService {
-
+  private API_CHANGE_AVATAR = environment.API_LOCAL + 'change-avatar';
   constructor(private http: HttpClient) {
   }
 
@@ -21,5 +21,8 @@ export class AuthService {
 
   signIn(signInForm: SignInForm): Observable<JwtResponse> {
     return this.http.post<JwtResponse>(environment.API_LOCAL + 'auth/signin', signInForm);
+  }
+  changeAvatar(info: any):Observable<JwtResponse>{
+    return this.http.put<JwtResponse>(this.API_CHANGE_AVATAR, info);
   }
 }
