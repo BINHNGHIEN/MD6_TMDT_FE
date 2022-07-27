@@ -4,6 +4,7 @@ import {ProductService} from "../../../service/product.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
+import {TokenService} from "../../../service/token.service";
 
 @Component({
   selector: 'app-product-list',
@@ -11,6 +12,7 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+  isLogin = false;
   searchForm = new FormGroup({
       name : new FormControl('')
     }
@@ -24,10 +26,16 @@ export class ProductListComponent implements OnInit {
   status = '';
   product: Product[]=[];
   constructor(private productService : ProductService,
+              private tokenService: TokenService,
               private httpClient:HttpClient) { }
 
   ngOnInit(): void {
     this.productList();
+    if(this.tokenService.getTokenKey()){
+      // this.avatar = this.tokenService.getAvatarKey();
+      this.isLogin = true;
+      console.log('   ====> ');
+    }
   }
   productList(){
     this.productService.findAll().subscribe(data =>{

@@ -41,4 +41,8 @@ export class ProductService {
   searchName(name:any): Observable<Product>{
     return this.http.get(environment.API_LOCAL+`product/search?name=`+`${name}`)
   }
+  addToCart(product_id: any): Observable<any> {
+    // @ts-ignore
+    return this.httpClient.post(environment.API_LOCAL+'cart/'+product_id);
+  }
 }

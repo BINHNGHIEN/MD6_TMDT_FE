@@ -111,8 +111,7 @@
               <img class="img-fluid" src="{{c.avatar}}" alt="">
             </div>
             <div class="flex-fill pl-3">
-              <h6>Category Name</h6>
-              <small class="text-body">{{c.name}}</small>
+              <h6>{{c.name}}</h6>
             </div>
           </div>
         </a>
@@ -152,6 +151,6 @@
   <!-- Products End -->
 
   <!-- Footer Start -->
-<!--  <app-upload-avatar (giveURLtoCreate)="onchange($event)"></app-upload-avatar>-->
+  <app-upload-avatar (giveURLtoCreate)="onchange($event)"></app-upload-avatar>
   <app-footer></app-footer>
 </div>
